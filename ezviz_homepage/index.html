@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover EZVIZ smart security cameras and smart home solutions in Sri Lanka.">
+  <meta name="theme-color" content="#ffffff">
+  <title>EZVIZ Sri Lanka | Smart Security. Smarter Living.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#17191d;--muted:#6c717a;--line:#e9eaed;--red:#e6333a;--soft:#f6f7f8;--white:#fff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"DM Sans",sans-serif;background:#fff}
+    a{color:inherit;text-decoration:none}button{font:inherit}
+    .topline{height:34px;background:#17191d;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    header{height:82px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5.5vw,88px);border-bottom:1px solid #f0f0f0;position:relative;z-index:10}
+    .brand{display:flex;align-items:center;gap:10px;font-family:Manrope,sans-serif;font-weight:800;font-size:27px;letter-spacing:-1.5px}
+    .brand-mark{width:27px;height:27px;border-radius:50%;background:conic-gradient(#00a8e0 0 25%,#8ac440 0 50%,#f5c400 0 75%,#ec368c 0);position:relative}
+    .brand-mark:after{content:"";position:absolute;inset:7px;background:#fff;border-radius:50%}
+    nav{display:flex;gap:34px;align-items:center;font-size:13px;font-weight:600}
+    nav a{transition:color .2s}nav a:hover{color:var(--red)}
+    .actions{display:flex;gap:18px;align-items:center}.icon-btn{border:0;background:transparent;cursor:pointer;font-size:20px;padding:6px;color:#25282d}
+    .menu-toggle{display:none}
+    .hero{position:relative;overflow:hidden;background:#edf4f9}
+    .slides{position:relative;height:min(48vw,610px);min-height:350px}
+    .slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s ease;display:flex;align-items:center;justify-content:center;background:#eef4f8}
+    .slide.active{opacity:1;visibility:visible}
+    .slide img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .slide:first-child img{object-fit:cover}
+    .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,17,29,.35),transparent 65%);pointer-events:none}
+    .hero-copy{position:absolute;left:clamp(24px,8vw,130px);top:50%;transform:translateY(-50%);max-width:480px;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.24);pointer-events:none}
+    .hero-copy.dark{color:#20252b;text-shadow:none}
+    .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 17px}
+    .hero-copy h1{font-family:Manrope,sans-serif;font-size:clamp(32px,4.5vw,64px);line-height:1.05;letter-spacing:-.045em;margin:0 0 18px;font-weight:800}
+    .hero-copy p{font-size:clamp(14px,1.2vw,17px);line-height:1.65;margin:0;max-width:390px}
+    .hero-cta{display:inline-flex;margin-top:26px;padding:13px 23px;background:#fff;color:#17191d;border-radius:2px;font-size:12px;font-weight:700;letter-spacing:.04em;pointer-events:auto;transition:.2s}
+    .hero-cta:hover{background:var(--red);color:#fff}
+    .slider-controls{position:absolute;left:clamp(24px,5.5vw,88px);right:clamp(24px,5.5vw,88px);bottom:25px;display:flex;align-items:center;justify-content:space-between}
+    .dots{display:flex;gap:9px}.dot{width:23px;height:3px;background:rgba(255,255,255,.55);border:0;padding:0;cursor:pointer}.dot.active{width:42px;background:#fff}
+    .arrows{display:flex;gap:8px}.arrow{width:38px;height:38px;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.12);color:#fff;border-radius:50%;cursor:pointer;font-size:18px;backdrop-filter:blur(8px)}
+    .section{padding:76px clamp(20px,7vw,110px)}.section-head{text-align:center;margin-bottom:36px}
+    .kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700}
+    h2{font-family:Manrope,sans-serif;font-size:clamp(27px,3vw,40px);letter-spacing:-.04em;margin:10px 0 9px}
+    .section-head p{color:var(--muted);font-size:14px;margin:0}
+    .categories{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+    .category{background:#f7f8f9;min-height:145px;padding:24px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;transition:.25s}
+    .category:hover{background:#f0f1f3;transform:translateY(-4px)}
+    .cat-icon{width:48px;height:48px;border:1px solid #dfe2e6;border-radius:50%;display:grid;place-items:center;font-size:22px;background:#fff}
+    .category strong{font-size:12px}
+    .feature-band{background:#17191d;color:#fff;display:grid;grid-template-columns:1fr 1fr;min-height:310px}
+    .feature-text{padding:clamp(35px,6vw,80px);display:flex;flex-direction:column;justify-content:center}
+    .feature-text .kicker{color:#ff777c}.feature-text h2{font-size:clamp(28px,3.5vw,46px);max-width:450px}.feature-text p{color:#bfc3ca;line-height:1.7;font-size:14px;max-width:430px}
+    .feature-image{background:linear-gradient(135deg,#e9f1f6,#cbd9e3);display:flex;align-items:center;justify-content:center;min-height:260px;font-size:76px}
+    .feature-image span{filter:drop-shadow(0 15px 15px #8795a0)}
+    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px}
+    .trust article{text-align:center;padding:25px 18px;border:1px solid var(--line)}.trust b{display:block;font-family:Manrope;font-size:16px;margin-bottom:8px}.trust p{color:var(--muted);font-size:12px;line-height:1.6;margin:0}
+    footer{background:#f5f6f7;padding:45px clamp(20px,7vw,110px) 25px}.footer-main{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footer-main p{font-size:13px;color:var(--muted);line-height:1.7;max-width:340px}.footer-links{display:flex;gap:60px}.footer-links div{display:flex;flex-direction:column;gap:12px;font-size:12px}.footer-links strong{font-size:12px;margin-bottom:4px}.copyright{border-top:1px solid #e1e3e6;margin-top:30px;padding-top:18px;color:#858a92;font-size:11px}
+    @media(max-width:900px){nav{gap:18px}.categories{grid-template-columns:repeat(3,1fr)}.slides{height:54vw;min-height:330px}}
+    @media(max-width:640px){.topline{font-size:9px;height:30px}header{height:68px}.brand{font-size:23px}.menu-toggle{display:block}.actions{gap:8px}nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:20px 24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}nav.open{display:flex}.slides{height:470px;min-height:0}.slide img{object-fit:cover;object-position:center}.hero-copy{left:24px;right:24px;top:38%;max-width:320px}.hero-copy h1{font-size:37px}.hero-copy p{font-size:13px}.slider-controls{bottom:17px}.section{padding:54px 20px}.categories{grid-template-columns:repeat(2,1fr);gap:9px}.category{min-height:125px}.feature-band{grid-template-columns:1fr}.feature-image{min-height:190px}.trust{grid-template-columns:1fr;gap:12px}.footer-links{gap:35px}}
+  </style>
+</head>
+<body>
+  <div class="topline">Official EZVIZ smart security solutions in Sri Lanka</div>
+  <header>
+    <a class="brand" href="#" aria-label="EZVIZ Sri Lanka home"><span class="brand-mark"></span>EZVIZ</a>
+    <nav id="mainNav">
+      <a href="#home">Home</a><a href="#categories">Products</a><a href="#solutions">Solutions</a><a href="#about">About EZVIZ</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="actions">
+      <button class="icon-btn" aria-label="Search">⌕</button>
+      <button class="icon-btn" aria-label="Shopping cart">♧</button>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-label="EZVIZ featured campaigns">
+      <div class="slides" id="slides">
+        <article class="slide active">
+          <img src="assets/banners/01-camera-collection.jpg" alt="EZVIZ smart security camera collection">
+          <div class="shade"></div><div class="hero-copy"><p class="eyebrow">Smarter security starts here</p><h1>See More.<br>Protect More.</h1><p>Discover smart security cameras designed to keep an eye on what matters.</p><a class="hero-cta" href="#categories">EXPLORE CAMERAS&nbsp; →</a></div>
+        </article>
+        <article class="slide">
+          <img src="assets/banners/02-smart-locks.jpg" alt="EZVIZ smart door lock collection">
+          <div class="shade"></div><div class="hero-copy"><p class="eyebrow">A smarter way home</p><h1>Keyless.<br>Carefree.</h1><p>Bring intelligent access and everyday convenience to your home.</p><a class="hero-cta" href="#categories">DISCOVER SMART HOME&nbsp; →</a></div>
+        </article>
+        <article class="slide">
+          <img src="assets/banners/03-clean-conserve.jpg" alt="EZVIZ sustainability campaign">
+          <div class="hero-copy dark"><p class="eyebrow">Technology with purpose</p><h1>Clean.<br>Conserve.<br>Coexist.</h1><p>Building a smarter, more thoughtful future together.</p><a class="hero-cta" href="#about">DISCOVER EZVIZ&nbsp; →</a></div>
+        </article>
+        <article class="slide">
+          <img src="assets/banners/04-night-security.jpg" alt="EZVIZ outdoor camera protecting a home at night">
+          <div class="shade"></div><div class="hero-copy"><p class="eyebrow">Confidence after dark</p><h1>Every Night.<br>Every Detail.</h1><p>Stay connected to your home, day and night.</p><a class="hero-cta" href="#categories">EXPLORE OUTDOOR CAMERAS&nbsp; →</a></div>
+        </article>
+        <article class="slide">
+          <img src="assets/banners/05-outdoor-protection.jpg" alt="EZVIZ outdoor camera on a home exterior">
+          <div class="hero-copy dark"><p class="eyebrow">Protection made simple</p><h1>Feel at Home.<br>Anywhere.</h1><p>Smart outdoor security that helps you stay close to what matters.</p><a class="hero-cta" href="#categories">FIND YOUR CAMERA&nbsp; →</a></div>
+        </article>
+        <article class="slide">
+          <img src="assets/banners/06-smart-cleaning.jpg" alt="EZVIZ robot vacuum and smart cleaning station">
+          <div class="hero-copy dark"><p class="eyebrow">A cleaner kind of smart living</p><h1>Less Cleaning.<br>More Living.</h1><p>Explore intelligent home care solutions from EZVIZ.</p><a class="hero-cta" href="#solutions">EXPLORE SMART LIVING&nbsp; →</a></div>
+        </article>
+      </div>
+      <div class="slider-controls">
+        <div class="dots" id="dots" aria-label="Choose banner"></div>
+        <div class="arrows"><button class="arrow" id="prev" aria-label="Previous slide">‹</button><button class="arrow" id="next" aria-label="Next slide">›</button></div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-head"><span class="kicker">Explore the range</span><h2>Find Your Smart Solution</h2><p>Thoughtful technology for every corner of your home.</p></div>
+      <div class="categories">
+        <a class="category" href="products.html?category=indoor"><span class="cat-icon">⌂</span><strong>Indoor Cameras</strong></a>
+        <a class="category" href="products.html?category=outdoor"><span class="cat-icon">◉</span><strong>Outdoor Cameras</strong></a>
+        <a class="category" href="products.html?category=4g"><span class="cat-icon">▥</span><strong>4G Cameras</strong></a>
+        <a class="category" href="products.html?category=solar"><span class="cat-icon">☼</span><strong>Solar Solutions</strong></a>
+        <a class="category" href="products.html?category=doorbell"><span class="cat-icon">⌑</span><strong>Video Doorbells</strong></a>
+        <a class="category" href="products.html?category=smart-home"><span class="cat-icon">✧</span><strong>Smart Home</strong></a>
+      </div>
+    </section>
+
+    <section class="feature-band" id="solutions">
+      <div class="feature-text"><span class="kicker">Smart living, made simple</span><h2>One connected home. More peace of mind.</h2><p>From intelligent cameras to connected home devices, discover solutions that help make everyday life easier and more secure.</p></div>
+      <div class="feature-image" aria-label="Smart home illustration"><span>⌂</span></div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-head"><span class="kicker">Why EZVIZ</span><h2>Technology You Can Feel Good About</h2><p>Designed to make security and smart living more accessible.</p></div>
+      <div class="trust">
+        <article><b>Smart & Simple</b><p>Intuitive products designed to fit naturally into everyday life.</p></article>
+        <article><b>Stay Connected</b><p>Keep closer to your home and the people and places that matter.</p></article>
+        <article><b>Support in Sri Lanka</b><p>Explore the EZVIZ range and get in touch with the local team for assistance.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-main">
+      <div><a class="brand" href="#"><span class="brand-mark"></span>EZVIZ</a><p>Smart security. Smarter living. Discover EZVIZ smart home and security solutions in Sri Lanka.</p></div>
+      <div class="footer-links">
+        <div><strong>Explore</strong><a href="#categories">Products</a><a href="#solutions">Solutions</a><a href="#about">About EZVIZ</a></div>
+        <div><strong>Support</strong><a href="support.html">Support Centre</a><a href="contact.html">Contact Us</a><a href="shipping.html">Delivery Information</a></div>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> EZVIZ Sri Lanka. All rights reserved.</div>
+  </footer>
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll('.slide')];
+      const dotsWrap = document.getElementById('dots');
+      let current = 0, timer;
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Show banner ${i + 1}`);
+        dot.addEventListener('click', () => show(i, true));
+        dotsWrap.appendChild(dot);
+      });
+      const dots = [...dotsWrap.children];
+      function show(index, reset = false) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((s, i) => s.classList.toggle('active', i === current));
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        if (reset) restart();
+      }
+      function restart() { clearInterval(timer); timer = setInterval(() => show(current + 1), 5000); }
+      document.getElementById('prev').addEventListener('click', () => show(current - 1, true));
+      document.getElementById('next').addEventListener('click', () => show(current + 1, true));
+      const hero = document.querySelector('.hero');
+      hero.addEventListener('mouseenter', () => clearInterval(timer));
+      hero.addEventListener('mouseleave', restart);
+      document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('mainNav').classList.toggle('open'));
+      document.getElementById('year').textContent = new Date().getFullYear();
+      restart();
+    })();
+  </script>
+</body>
+</html>
