@@ -1,0 +1,42 @@
+{
+  "settings": {
+    "whatsapp": "94742854085",
+    "phone": "074 285 4085",
+    "address": "75 A Mirihana Rd, Nugegoda 10250"
+  },
+  "products": [
+    {
+      "n": "EZVIZ H1C",
+      "c": "Cube Camera",
+      "i": "📷",
+      "d": "1080P",
+      "p": "",
+      "inStock": true,
+      "img": "img/n01.jpg",
+      "description": "A compact indoor Wi-Fi camera for keeping an eye on family and pets, with 1080p video, night vision, motion alerts and two-way talk.",
+      "officialUrl": "https://www.ezviz.com/sas/product/h1c/347341"
+    },
+    {
+      "n": "EZVIZ BM1 Baby Monitor",
+      "c": "Cube Camera",
+      "i": "📷",
+      "d": "1080P",
+      "p": "",
+      "inStock": true,
+      "img": "img/n02.jpg",
+      "description": "A battery-powered baby monitor with crying and activity detection, out-of-crib alerts, clear night vision, two-way talk and soothing music playback.",
+      "officialUrl": "https://www.ezviz.com/sas/product/bm1/347667"
+    },
+    {
+      "n": "EZVIZ TY1 Pro",
+      "c": "Indoor Pan/Tilt",
+      "i": "📷",
+      "d": "2MP",
+      "p": "",
+      "inStock": true,
+      "img": "img/n03.jpg",
+      "description": "A pan-and-tilt indoor camera designed for wide-area home monitoring, with panoramic viewing, smart detection, auto-tracking, patrol mode and two-way calling.",
+      "officialUrl": "https://www.ezviz.com/sas/product/ty1-pro/347333"
+    }
+  ]
+}
