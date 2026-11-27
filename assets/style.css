@@ -172,3 +172,8 @@ header .nav .logo img{display:block;width:100%;max-width:390px;height:auto;max-h
   header .nav .logo{flex:0 1 235px}
   header .nav .logo img{width:100%;max-width:235px;max-height:56px}
 }
+
+/* Restore the working logo dimensions until the full branding PNG is uploaded as a real binary asset */
+header .nav .logo{flex:0 1 auto}
+header .nav .logo img{width:168px;max-width:168px;max-height:55px;height:auto;object-fit:contain}
+@media(max-width:650px){header .nav .logo{flex:0 1 auto}header .nav .logo img{width:130px;max-width:130px;max-height:48px}}
