@@ -161,35 +161,104 @@
  .home-local-actions{align-items:flex-start;flex-direction:column;gap:6px}
 }
 
-/* Full original EZVIZ WiFi LK branding in the site header */
-header .nav .logo{display:flex;align-items:center;flex:0 1 390px;min-width:0}
-header .nav .logo img{display:block;width:100%;max-width:390px;height:auto;max-height:76px;object-fit:contain;object-position:left center}
-@media(max-width:900px){
-  header .nav .logo{flex-basis:310px}
-  header .nav .logo img{max-width:310px;max-height:66px}
+
+/* ===== Homepage layout refinement + original full branding ===== */
+header{z-index:50}
+header .nav{
+  position:relative;
+  height:auto;
+  min-height:124px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding-top:7px;
+  padding-bottom:7px;
+}
+header .nav .logo{
+  display:flex;
+  align-items:center;
+  flex:0 1 340px;
+  min-width:0;
+}
+header .nav .logo img{
+  display:block;
+  width:100%;
+  max-width:340px;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+  object-position:left center;
+}
+header .navlinks{gap:clamp(10px,1.35vw,19px);flex:0 1 auto}
+header .navlinks a{font-size:10px;white-space:nowrap;letter-spacing:.55px}
+header .nav-actions{flex:0 0 auto;gap:4px}
+header .iconbtn{padding:7px;font-size:21px}
+header .menu-toggle{display:none}
+.home-global .hero-slider.user-banner-slider{
+  width:100%;
+  height:clamp(460px,43vw,620px);
+  min-height:460px;
+}
+.home-global .hero-slider.user-banner-slider .hero-slide>img.user-banner-image{
+  object-fit:cover;
+  object-position:center;
+}
+.home-global .home-family,
+.home-global .home-picks,
+.home-global .home-stories{overflow:hidden}
+.home-global .family-grid{grid-auto-rows:clamp(190px,19vw,250px)}
+.home-global .family-card img,
+.home-global .story-card img{display:block}
+.home-global .smart-home-scene{min-height:320px}
+.home-global .home-section-heading{min-width:0}
+.home-global .home-section-heading>div{min-width:0}
+.home-global .home-local-inner{max-width:1200px}
+@media(max-width:1120px){
+  header .nav{min-height:108px}
+  header .nav .logo{flex-basis:300px}
+  header .nav .logo img{max-width:300px}
+  header .menu-toggle{display:block;order:0}
+  header .nav .logo{order:1}
+  header .nav-actions{order:2;margin-left:auto}
+  header .navlinks{
+    display:none;
+    position:absolute;
+    z-index:60;
+    top:100%;
+    left:0;
+    right:0;
+    background:#fff;
+    padding:18px 24px 22px;
+    box-shadow:0 14px 22px rgba(0,0,0,.12);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+  }
+  header .navlinks.open{display:flex}
 }
 @media(max-width:650px){
-  header .nav .logo{flex:0 1 235px}
-  header .nav .logo img{width:100%;max-width:235px;max-height:56px}
+  .topline{font-size:8px;letter-spacing:1px;padding:8px 6px}
+  header .nav{min-height:88px;gap:8px;padding-top:6px;padding-bottom:6px}
+  header .nav .logo{flex:0 1 225px}
+  header .nav .logo img{width:100%;max-width:225px;max-height:none}
+  header .menu-toggle{font-size:19px;padding:6px}
+  header .nav-actions{gap:0}
+  header .iconbtn{font-size:19px;padding:6px}
+  .home-global .hero-slider.user-banner-slider{height:540px;min-height:0}
+  .home-global .hero-slider.user-banner-slider .hero-slide>img.user-banner-image{object-position:center}
+  .home-global .hero-slider.user-banner-slider .user-banner-copy{bottom:68px}
+  .home-global .hero-slider.user-banner-slider .user-banner-copy h1{font-size:clamp(34px,9vw,42px);letter-spacing:-1.5px}
+  .home-global .home-family,
+  .home-global .home-picks,
+  .home-global .home-stories{padding-top:48px;padding-bottom:48px}
+  .home-global .family-grid{grid-auto-rows:168px}
+  .home-global .smart-home-scene{height:330px;min-height:0}
+  .home-global .story-card{height:235px}
 }
-
-/* Restore the working logo dimensions until the full branding PNG is uploaded as a real binary asset */
-header .nav .logo{flex:0 1 auto}
-header .nav .logo img{width:168px;max-width:168px;max-height:55px;height:auto;object-fit:contain}
-@media(max-width:650px){header .nav .logo{flex:0 1 auto}header .nav .logo img{width:130px;max-width:130px;max-height:48px}}
-
-/* Original complete EZVIZ WiFi LK branding */
-header .nav .logo{display:flex;align-items:center;flex:0 1 360px;min-width:0}
-header .nav .logo img{display:block;width:100%;max-width:360px;height:auto;max-height:102px;object-fit:contain;object-position:left center}
-@media(max-width:1100px){
- header .nav .logo{flex-basis:300px}
- header .nav .logo img{max-width:300px;max-height:88px}
-}
-@media(max-width:760px){
- header .nav .logo{flex:0 1 260px}
- header .nav .logo img{max-width:260px;max-height:78px}
-}
-@media(max-width:520px){
- header .nav .logo{flex:0 1 205px}
- header .nav .logo img{max-width:205px;max-height:64px}
+@media(max-width:390px){
+  header .nav .logo{flex-basis:185px}
+  header .nav .logo img{max-width:185px}
+  header .nav .iconbtn{padding:4px}
+  .home-global .family-grid{grid-template-columns:1fr;grid-auto-rows:210px}
 }
