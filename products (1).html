@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products | EzvizWifi</title>
+<style>
+:root{--blue:#1a6bff;--ink:#222;--mute:#666;--bg:#f5f8ff;--card:#fff;--line:#e6e9f0}
+@media (prefers-color-scheme:dark){:root{--ink:#f1f1f1;--mute:#aab;--bg:#14171c;--card:#1d2128;--line:#2c313a}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.bar{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:26px;color:var(--ink);letter-spacing:-.5px}
+.logo b{color:var(--blue)}
+nav a{margin-left:22px;text-decoration:none;color:var(--ink);font-size:16px}
+nav a:hover,nav a.on{color:var(--blue)}
+.hero{text-align:center;padding:50px 20px 20px}
+.hero h1{margin:0 0 10px;font-size:36px}
+.hero p{margin:0;color:var(--mute)}
+.tabs{max-width:1200px;margin:10px auto 0;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 18px;border-radius:999px;font-size:15px;cursor:pointer}.tab.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.grid{max-width:1200px;margin:30px auto 60px;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.img{height:200px;background:linear-gradient(135deg,#dbe8ff,#eef4ff);display:flex;align-items:center;justify-content:center}
+.noimg{color:#1a6bff;font-weight:600;padding:10px;text-align:center}
+.img img{max-width:100%;max-height:100%;object-fit:contain}
+.body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.body h3{margin:0;font-size:18px}
+.body p{margin:0;color:var(--mute);font-size:14px;line-height:1.5;flex:1}
+.price{font-size:20px;font-weight:700;color:var(--blue)}
+.btn{display:block;text-align:center;background:#25d366;color:#fff;text-decoration:none;padding:11px;border-radius:999px;font-weight:600;margin-top:6px}
+.btn:hover{opacity:.9}
+footer{background:var(--card);border-top:1px solid var(--line);text-align:center;padding:36px 20px}
+footer p{margin:6px 0;color:var(--mute);font-size:15px}
+@media(max-width:560px){nav a{margin:0 12px 0 0}.hero h1{font-size:28px}}
+</style>
+</head>
+<body id="top">
+<header><div class="bar">
+  <a class="logo" href="index.html" aria-label="EzvizWifi home">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M5.5 12.5a10 10 0 0 1 13 0"/><path d="M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1.3" fill="#1a6bff" stroke="none"/></svg>
+    <span><b>Ezviz</b>Wifi</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html" class="on">Products</a>
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</div></header>
+
+<section class="hero">
+  <h1>Our Products</h1>
+  <p>EZVIZ Wi-Fi cameras with company warranty and installation.</p>
+</section>
+
+<div class="tabs" id="tabs"></div>
+<main class="grid" id="grid"></main>
+
+<footer>
+  <p>&#128205; 75 A Mirihana Rd, Nugegoda 10250</p>
+  <p>&copy; 2026 EzvizWifi. All rights reserved.</p>
+</footer>
+
+<script>
+// ===== EDIT HERE =====
+// WhatsApp number in international format, no + or spaces (Sri Lanka: 94 then number without the first 0)
+var WHATSAPP = "94XXXXXXXXX";
+
+// Edit name, desc, price here. cat = the filter tab it belongs to. image = photo link (or a file name in the same folder).
+var PRODUCTS = [
+  {"cat": "Best Seller", "name": "C6N G1 3K", "desc": "A complete evolution. An all-new look.", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/bcfae6e953062346411af2a0d4fa1c90.png"},
+  {"cat": "Best Seller", "name": "H9c Dual 3K", "desc": "Security that sees more, protects better", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/0b96939c1d916b4c70916a99b89c6a4f.png"},
+  {"cat": "Best Seller", "name": "H8c Pro 4K", "desc": "Smartly secure with sophisticated 4K", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/1473d4e57619dc5c1b6d5e2b3e531d47.png"},
+  {"cat": "Best Seller", "name": "HB8 Lite Kit", "desc": "A simple yet reliable system that’s always ready", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/dd0c35531b80044aa662dbec3ae8cdc2.png"},
+  {"cat": "Best Seller", "name": "DL01 Pro", "desc": "Smartly unlock convenience in an effortless, elegant way", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/0a71e3b6edd418e9454dd6c1c3f7fcda.png"},
+  {"cat": "Best Seller", "name": "DP2C", "desc": "Wire-free Peephole Doorbell", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/bb587fb204fe415627bb8f2e57280b2a.png"},
+  {"cat": "4G Cameras", "name": "EB8 Pro 4G", "desc": "Power that lasts, outdoor protection that never rests", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/fcb6140b740e52f724c7a6da1904828d.png"},
+  {"cat": "4G Cameras", "name": "CB90x Dual 4G Kit", "desc": "Remarkable coverage. Ultra-flexibility.", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/f2b55c9c0e2827824794bcf5af60911f.png"},
+  {"cat": "4G Cameras", "name": "EB3 4G Kit", "desc": "Flexible. Reliable. Capable.", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/884cfa92ada1d74951efe4bb0e252e2c.png"},
+  {"cat": "4G Cameras", "name": "HB8 Lite 4G Kit", "desc": "Sun-powered security, wherever life takes you", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/5ef276dae428e2d8b01110465785b405.png"},
+  {"cat": "Smart Locks", "name": "Y3000FVP Plus", "desc": "Unlock the AI power of your front door", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/e04688ed7d2fb1e63e1ed66e0d4789e5.png"},
+  {"cat": "Smart Locks", "name": "DL05", "desc": "Enjoy easy keyless entry of a safe home", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/d0d52a468036a9b1cc5df44f4b60e768.png"},
+  {"cat": "Smart Locks", "name": "DL03 Pro", "desc": "An internet-connected front door with keyless access", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/9bc78366a1dd7a562b3b77a117de87c0.png"},
+  {"cat": "Smart Locks", "name": "DL04 Pro", "desc": "Enter keylessly, control remotely, secure easily", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/93896f144c7b05097abccbb7d61d56d2.png"},
+  {"cat": "Smart Entry", "name": "HP7 Pro", "desc": "Your Palm is the Key, Your Eyes Get 4K", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/1f29c50c32624527c4b122a29be65c1c.png"},
+  {"cat": "Smart Entry", "name": "EP3x Pro Kit", "desc": "Hear what matters with double protection at doorway", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/51dbd2b67988fd4d0c62a5d5fce152aa.png"},
+  {"cat": "Smart Entry", "name": "HP7 2-Entry Kit", "desc": "Double-door protection, all in one smart kit", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/18cc49d3b2bf0fb221611390042f7701.png"},
+  {"cat": "Smart Entry", "name": "HG2 400", "desc": "Install with ease and control anywhere", "price": "Rs. XX,XXX", "image": "https://mfs.ezvizlife.com/7a9dd5f24db541a9cb1b0e58d3f64c35.png"}
+];
+// =====================
+
+var grid = document.getElementById("grid");
+var tabs = document.getElementById("tabs");
+var cats = ["All"];
+PRODUCTS.forEach(function (p) { if (cats.indexOf(p.cat) < 0) cats.push(p.cat); });
+
+function render(cat) {
+  grid.innerHTML = "";
+  PRODUCTS.filter(function (p) { return cat === "All" || p.cat === cat; }).forEach(function (p) {
+    var msg = encodeURIComponent("Hi, I'm interested in the " + p.name);
+    var img = p.image ? '<img src="' + p.image + '" alt="' + p.name + '" referrerpolicy="no-referrer" onerror="this.outerHTML=\'<span class=&quot;noimg&quot;>' + p.name + '</span>\'">' : "";
+    var el = document.createElement("div");
+    el.className = "card";
+    el.innerHTML =
+      '<div class="img">' + img + '</div>' +
+      '<div class="body"><h3>' + p.name + '</h3><p>' + p.desc + '</p>' +
+      '<div class="price">' + p.price + '</div>' +
+      '<a class="btn" target="_blank" rel="noopener" href="https://wa.me/' + WHATSAPP + '?text=' + msg + '">Order on WhatsApp</a></div>';
+    grid.appendChild(el);
+  });
+}
+cats.forEach(function (c, i) {
+  var b = document.createElement("button");
+  b.className = "tab" + (i === 0 ? " on" : "");
+  b.textContent = c;
+  b.onclick = function () {
+    Array.prototype.forEach.call(tabs.children, function (t) { t.classList.remove("on"); });
+    b.classList.add("on");
+    render(c);
+  };
+  tabs.appendChild(b);
+});
+render("All");
+</script>
+</body>
+</html>
