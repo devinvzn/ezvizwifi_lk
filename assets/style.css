@@ -160,3 +160,15 @@
  .story-card,.story-card.story-wide{grid-column:auto;height:260px}
  .home-local-actions{align-items:flex-start;flex-direction:column;gap:6px}
 }
+
+/* Full original EZVIZ WiFi LK branding in the site header */
+header .nav .logo{display:flex;align-items:center;flex:0 1 390px;min-width:0}
+header .nav .logo img{display:block;width:100%;max-width:390px;height:auto;max-height:76px;object-fit:contain;object-position:left center}
+@media(max-width:900px){
+  header .nav .logo{flex-basis:310px}
+  header .nav .logo img{max-width:310px;max-height:66px}
+}
+@media(max-width:650px){
+  header .nav .logo{flex:0 1 235px}
+  header .nav .logo img{width:100%;max-width:235px;max-height:56px}
+}
