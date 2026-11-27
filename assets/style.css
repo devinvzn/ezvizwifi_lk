@@ -177,3 +177,19 @@ header .nav .logo img{display:block;width:100%;max-width:390px;height:auto;max-h
 header .nav .logo{flex:0 1 auto}
 header .nav .logo img{width:168px;max-width:168px;max-height:55px;height:auto;object-fit:contain}
 @media(max-width:650px){header .nav .logo{flex:0 1 auto}header .nav .logo img{width:130px;max-width:130px;max-height:48px}}
+
+/* Original complete EZVIZ WiFi LK branding */
+header .nav .logo{display:flex;align-items:center;flex:0 1 360px;min-width:0}
+header .nav .logo img{display:block;width:100%;max-width:360px;height:auto;max-height:102px;object-fit:contain;object-position:left center}
+@media(max-width:1100px){
+ header .nav .logo{flex-basis:300px}
+ header .nav .logo img{max-width:300px;max-height:88px}
+}
+@media(max-width:760px){
+ header .nav .logo{flex:0 1 260px}
+ header .nav .logo img{max-width:260px;max-height:78px}
+}
+@media(max-width:520px){
+ header .nav .logo{flex:0 1 205px}
+ header .nav .logo img{max-width:205px;max-height:64px}
+}
